@@ -1,0 +1,369 @@
+:root {
+    --cor-de-fundo: #F5F5F5;
+    --cor-de-link: #000;
+    --cor-de-fundo-azul: #EAF2FD;
+    --cor-de-texto: #464646;
+    --cor-azul-botao: #2A7AE4;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--cor-de-fundo);
+    font-family: 'Raleway';
+    color: var(--cor-de-texto);
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-size: 1.8rem;
+}
+
+section {
+    padding: 1.6rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-de-link);
+}
+
+/*Comentário do desafio: Neste desafio, gostariamos que praticassem a metodologia BEM, caso seintam a vontade 
+de utiliza-la. 
+
+Mas o que é o BEM?
+
+BEM (Block, Element, Modifier) ​​é uma abordagem baseada em componentes para o desenvolvimento
+web. A ideia por trás disso é dividir a interface do usuário em blocos independentes.
+Isso torna o desenvolvimento de interface fácil e rápido, mesmo com uma interface
+de usuário complexa, e permite a reutilização de código existente sem copiar e colar.
+
+Link da documentação oficial!
+https://en.bem.info/methodology/quick-start/*/
+
+/*Sessão Menu*/
+section.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* esconder menu para páginas mobile */
+.menu__list {
+    display: none;
+}
+
+.menu__list__item__contato {
+    font-weight: bold;
+}
+
+/*Sessão Title*/
+section.title {
+    text-align: justify;
+}
+
+.title__profile {
+    width: 9rem;
+}
+
+.title__subsection {
+    font-weight: lighter;
+    font-size: 1.8rem;
+}
+
+.title__network {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+/*Sessão About*/
+section.about {
+    background-color: var(--cor-de-fundo-azul);
+    text-align: left;
+}
+
+/*Sessão Skills e Hobbies*/
+section.skills,
+section.hobbies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills__line,
+.hobbies__line {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.skills__box ul,
+.hobbies__box ul {
+    background-color: white;
+    align-content: end;
+    padding: 1.6rem;
+    margin: 1rem;
+    height: 13rem;
+}
+
+.skills__img img,
+.hobbies__img img {
+    width: 4rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Experiência Acadêmica*/
+
+section.academic,
+section.experience {
+    background-color: var(--cor-de-fundo-azul);
+    text-align: center;
+}
+
+.academic__courses__box {
+    margin-bottom: 5rem;
+}
+
+/* Projetos */
+section.projects {
+    text-align: center;
+}
+
+.projects__box {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.projects__info {
+    display: grid;
+}
+
+.project__img {
+    margin: auto;
+    width: 80vw;
+}
+
+.projects__text {
+    margin-top: -1rem;
+    font-weight: 300;
+}
+
+.projects-repo,
+.projects-demo,
+.formcontato__botao {
+    font-family: 'Raleway';
+    font-size: 1.7rem;
+    padding: 1.2rem;
+    border: 1px solid var(--cor-azul-botao);
+    margin: 1rem 1rem 4rem 1rem;
+}
+
+.projects-repo:hover,
+.projects-demo:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.projects-repo {
+    color: var(--cor-azul-botao);
+    background: none;
+}
+
+.projects-demo,
+.formcontato__botao {
+    background-color: var(--cor-azul-botao);
+    color: white;
+}
+
+/* Experiência Profissional */
+.experience__text {
+    font-size: 1.7rem;
+    text-align: justify;
+    margin-bottom: 5rem;
+}
+
+
+/*Contato*/
+
+section.formcontato {
+    background-color: var(--cor-de-fundo-azul);
+}
+
+.formcontato__img {
+    display: none;
+}
+
+.formcontato__input,
+.formcontato__textarea {
+    background-color: white;
+    border: none;
+    font-family: 'Raleway';
+    font-size: 1.7rem;
+    padding: 0.5rem;
+    margin: 1rem;
+    width: 90%;
+}
+
+
+/*footeer*/
+
+section.footer {
+    background-color: white;
+    text-align: center;
+}
+
+/* Chegou a hora de se desafiar com a responsividade, 
+utilize como referência os breakpoints @media abaixo*/
+
+/*Tablet*/
+@media (min-width: 768px) {
+
+    /*title*/
+    .title__div {
+        display: flex;
+    }
+
+    .title__container {
+        order: 1;
+    }
+
+    .title__profile {
+        order: 2;
+        width: 14rem;
+        height: 14rem;
+        margin-left: 4rem;
+    }
+
+    /*Skills*/
+    .skills__line {
+        justify-content: center;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/*Desktop*/
+@media (min-width: 1000px) {
+
+    section {
+        padding: 5rem 10rem;
+    }
+
+    /*Menu*/
+    section.menu {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+    }
+
+    .menu__title {
+        margin-left: 2rem;
+    }
+
+    .menu__info {
+        display: flex;
+        font-size: 1.6rem;
+        align-items: center;
+        justify-content: left;
+    }
+
+    .menu__list {
+        display: flex;
+    }
+
+    .menu__list__item {
+        text-align: center;
+        margin: 1.2rem;
+    }
+
+    /*Titulo*/
+    .title__bio {
+        font-size: 3rem;
+    }
+
+    .title__profile {
+        width: 30rem;
+        height: 30rem;
+    }
+
+    /*Skills e Hobbies*/
+    .skills__line {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .skills__box,
+    .hobbies__box {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    /*Formação Acadêmica*/
+    .academic__courses,
+    .experiences {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    /*Experiência Profissional*/
+    .experiencie__box {
+        width: 50rem;
+        margin: 2rem;
+    }
+
+    /*Projetos*/
+    .projects__box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .projects__info {
+        width: 40rem;
+        background-color: white;
+        align-items: center;
+        padding: 1.5rem;
+        margin: 3rem;
+    }
+
+    .project__img {
+        width: 100%;
+    }
+
+    /*Contato*/
+    .formcontato__contacto {
+        display: flex;
+    }
+
+    .formcontato__img {
+        margin-right: 5rem;
+        display: flex;
+        width: 40rem;
+    }
+
+    /*Footer*/
+    section.footer {
+        padding: 3rem;
+    }
+}
